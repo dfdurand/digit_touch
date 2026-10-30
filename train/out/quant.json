@@ -1,0 +1,116 @@
+{
+  "float_size_bytes": 110144,
+  "int8_size_bytes": 32328,
+  "reduction": 3.41,
+  "keras_accuracy_pct": 98.67,
+  "tflite_float_accuracy_pct": 98.67,
+  "tflite_int8_accuracy_pct": 98.65,
+  "float_vs_int8_disagreements": 9,
+  "mean_prob_difference": 0.00055,
+  "input": {
+    "type": "int8",
+    "shape": [
+      1,
+      28,
+      28,
+      1
+    ],
+    "scale": 0.003921568859368563,
+    "zero_point": -128
+  },
+  "output": {
+    "type": "int8",
+    "shape": [
+      1,
+      10
+    ],
+    "scale": 0.00390625,
+    "zero_point": -128
+  },
+  "operations": [
+    "CONV_2D",
+    "MAX_POOL_2D",
+    "CONV_2D",
+    "MAX_POOL_2D",
+    "RESHAPE",
+    "FULLY_CONNECTED",
+    "FULLY_CONNECTED",
+    "SOFTMAX"
+  ],
+  "unique_operations": [
+    "CONV_2D",
+    "FULLY_CONNECTED",
+    "MAX_POOL_2D",
+    "RESHAPE",
+    "SOFTMAX"
+  ],
+  "activations": [
+    "[1, 28, 28, 1]: 784 B",
+    "[1, 28, 28, 8]: 6272 B",
+    "[1, 14, 14, 8]: 1568 B",
+    "[1, 14, 14, 16]: 3136 B",
+    "[1, 7, 7, 16]: 784 B",
+    "[1, 784]: 784 B",
+    "[1, 32]: 32 B",
+    "[1, 10]: 10 B",
+    "[1, 10]: 10 B"
+  ],
+  "largest_activation_bytes": 6272,
+  "largest_input_output_pair_bytes": 7840,
+  "conv1_filter_example": {
+    "filter_float32": [
+      [
+        0.614799976348877,
+        0.3314000070095062,
+        -0.3073999881744385
+      ],
+      [
+        0.507099986076355,
+        -0.027899999171495438,
+        -0.4207000136375427
+      ],
+      [
+        -0.14949999749660492,
+        -0.3903999924659729,
+        -0.8592000007629395
+      ]
+    ],
+    "scale": 0.006765368860214949,
+    "zero_point": 0,
+    "filter_int8": [
+      [
+        91,
+        49,
+        -45
+      ],
+      [
+        75,
+        -4,
+        -62
+      ],
+      [
+        -22,
+        -58,
+        -127
+      ]
+    ],
+    "filter_reconstructed": [
+      [
+        0.6155999898910522,
+        0.33149999380111694,
+        -0.3043999969959259
+      ],
+      [
+        0.5073999762535095,
+        -0.02710000053048134,
+        -0.4194999933242798
+      ],
+      [
+        -0.14880000054836273,
+        -0.39239999651908875,
+        -0.8592000007629395
+      ]
+    ],
+    "max_error": 0.0029469155706465244
+  }
+}

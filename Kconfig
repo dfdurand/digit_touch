@@ -1,0 +1,26 @@
+# digit_touch — application-specific options
+
+mainmenu "digit_touch"
+
+# Intermediate variable: the comma in "zephyr,dtcm" would otherwise be taken
+# as an argument separator
+DT_CHOSEN_Z_DTCM := zephyr,dtcm
+
+config APP_ARENA_IN_DTCM
+	bool "TFLM tensor arena in DTCM"
+	depends on $(dt_chosen_enabled,$(DT_CHOSEN_Z_DTCM))
+	help
+	  Place the tensor arena (model activations) in DTCM: RAM coupled
+	  directly to the Cortex-M7 core, accessible with no wait states and
+	  without going through the cache. By default, it is in SRAM1.
+
+config APP_LAYER_PROFILING
+	bool "Per-layer timing in the self-test"
+	help
+	  The startup self-test prints the number of cycles spent in each
+	  operation of the model (CONV_2D, MAX_POOL_2D...).
+	  Disabled by default: by shifting the placement of code in flash, it
+	  slowed inference down by ~20 % (7.48 ms instead of 6.14 ms).
+	  The proportions between layers remain valid, not the absolute times.
+
+source "Kconfig.zephyr"

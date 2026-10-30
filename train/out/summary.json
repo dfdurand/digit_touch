@@ -1,0 +1,28 @@
+{
+  "parameters": 26698,
+  "epochs_run": 15,
+  "training_duration_s": 37.9,
+  "test_accuracy_pct": 98.67,
+  "test_loss": 0.0392,
+  "test_errors": 133,
+  "accuracy_per_digit_pct": {
+    "0": 99.29,
+    "1": 98.68,
+    "2": 98.55,
+    "3": 99.5,
+    "4": 98.47,
+    "5": 99.44,
+    "6": 98.85,
+    "7": 98.44,
+    "8": 97.74,
+    "9": 97.82
+  },
+  "top_confusions": [
+    "4 read as 9: 8 times",
+    "9 read as 4: 6 times",
+    "7 read as 9: 6 times",
+    "2 read as 7: 6 times",
+    "9 read as 8: 5 times",
+    "8 read as 5: 5 times"
+  ]
+}
